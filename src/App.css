@@ -1,3 +1,55 @@
+@font-face {
+  font-family: 'SEGA LOGO FONT';
+  font-style: normal;
+  font-weight: 300;
+  src: url('SEGA.TTF') format("truetype");
+}
+
+h1 {
+  font-family: 'SEGA LOGO FONT';
+  font-weight: 200;
+  color:  #03c6fc;
+}
+
+.container {  
+  margin: 75px auto;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.bottom {
+   margin-bottom: 25px;
+}
+.containplayer {
+  width: 100%;
+  position: fixed;
+bottom: 0;
+left:0
+}
+
+.zzz {
+  z-index: 999;
+}
+
+#content_cont h1 { margin-top:0; }
+.backg {
+  background-color: rgba(0,0,0,0.5);
+}
+
+body {
+
+    padding-bottom: 82px;
+
+}
+.Particles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+}
 .App {
   text-align: center;
 }
