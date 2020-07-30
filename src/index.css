@@ -4,7 +4,8 @@ body {
   font-family: 'Times New Roman', Courier, monospace;
 
   background-image: url("background.jpg");
-  background-size: 1920px 1080px
+  background-size: 1920px 1080px;
+  background-attachment: fixed;
 }
 button {
   cursor: pointer;

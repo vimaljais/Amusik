@@ -131,7 +131,8 @@ class App extends React.Component {
       this.player = React.createRef();  
       this.state = {
         top50: [],
-        link:''
+        link:'',
+        top50artists:[]
       }
     }
 
@@ -142,36 +143,44 @@ class App extends React.Component {
       this.player.current.audio.current.play()
     } 
 
-    componentDidMount(){
 
+
+    componentDidMount(){
         fetch('https://young-meadow-81807.herokuapp.com/gettop50')
         .then(response=> response.json())
         .then(response => {
           this.setState({top50: response.tracks.track})
-        })     
+        })  
+        fetch('http://localhost:3000/gettop50artists')
+        .then(response=> response.json())
+        .then(response => {
+          this.setState({top50artists: response.artists.artist})
+        })   
   } 
 
 
 
     render() {
-      const {top50} = this.state;
+
+    const {top50} = this.state;
+    const {top50artists} = this.state;
     return (
-    <div className="App tc">
+    <div className="App">
       <Particles  className='Particles'
         params = {ParticlesOptions} />
- {/*     <Navigation />*/}
+       {/*     <Navigation />*/}
 
-      <h1 className='f1 backg'>Amusik </h1>
+      <h1 className='f1 defaultcursor backg'>Amusik </h1>
 
       {/*<Music reload={this.reload} />*/}
       <AudioPlayer className='containplayer zzz' 
         src={this.state.link}
         ref={this.player}
-        layout="horizontal-reverse"
+        layout="Stacked Reverse"
         // Try other props!
       />
      {/* <button onClick={this.reload}> click me </button>*/}
-     <Cardlist reload={this.reload} link={this.state.link} top50={top50} />
+     <Cardlist reload={this.reload} link={this.state.link} top50={top50} top50artists={top50artists} />
     </div>
   );
   }

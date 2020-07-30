@@ -1,14 +1,13 @@
 import React from 'react';
-import './Card.css';
+import './SearchCard.css';
 
 var check='';
 
-class Card extends React.Component   { 
+class SearchCard extends React.Component   { 
 		constructor(props) {
 		super(props);
 		this.state = {
 			art:'',
-			keyword: '',
 			link:''
 		}
 	}
@@ -43,16 +42,6 @@ class Card extends React.Component   {
 		})
 	}
 
-	componentDidMount() {
-		const {song, artist} = this.props;
-		fetch(`https://young-meadow-81807.herokuapp.com/getart/${song} ${artist}`)
-		.then(response => response.json())
-		.then(response => {
-			this.setState({art:response});					
-		})		
-	}
-
-
 
 
 	render() {
@@ -65,14 +54,14 @@ class Card extends React.Component   {
 	   return splitStr.join(' '); 
 	}
 
-	var {song, artist} = this.props;
+	var {song, artist,art} = this.props;
 	song = song.replace(/ \([\s\S]*?\)/g, '');
 	song = titleCase(song);
 
 	return (
 
 		<div className='button bg-image1 light-blue dib br3 grow tc bw2 shadow-5 flex items-center bb b--black-10' onClick={() => this.getUrl(`${song} ${artist} lyrics`)} >
-			<img className= '' src={`${this.state.art}`} alt='artwork' />
+			<img className= '' src={art} alt='artwork' />
 			<dl className="pl3 flex-auto">
 	          <dt className="clip">Title</dt>
 	          <dd className="ml0 white truncate w-100">{song}</dd> 
@@ -84,5 +73,5 @@ class Card extends React.Component   {
 	}
 }
 
-export default Card;
+export default SearchCard;
 
