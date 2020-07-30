@@ -151,7 +151,7 @@ class App extends React.Component {
         .then(response => {
           this.setState({top50: response.tracks.track})
         })  
-        fetch('http://localhost:3000/gettop50artists')
+        fetch('https://young-meadow-81807.herokuapp.com/gettop50artists')
         .then(response=> response.json())
         .then(response => {
           this.setState({top50artists: response.artists.artist})
