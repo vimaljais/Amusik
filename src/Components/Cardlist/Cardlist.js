@@ -32,7 +32,7 @@ class CardList extends React.Component {
           this.setState({searchtrack: response.results})
         })  
 
-/*		fetch(`http://localhost:3000/getartistsearch/${this.state.quary}`)
+/*		fetch(`https://young-meadow-81807.herokuapp.com/getartistsearch/${this.state.quary}`)
         .then(response=> response.json())
         .then(response => {
           this.setState({searchartist: response.results.artistmatches.artist})

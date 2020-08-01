@@ -15,7 +15,7 @@ class Card extends React.Component   {
 
 	createAudio = (url) => {
 			if(url!== check) {
-			fetch('https://young-meadow-81807.herokuapp.com/link', {
+			fetch('https://young-meadow-81807.herokuapp.com/linknew', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -71,7 +71,7 @@ class Card extends React.Component   {
 
 	return (
 
-		<div className='button bg-image1 light-blue dib br3 grow tc bw2 shadow-5 flex items-center bb b--black-10' onClick={() => this.getUrl(`${song} ${artist} lyrics`)} >
+		<div className='button bg-image1 light-blue dib br3 grow tc bw2 shadow-5 flex items-center bb b--black-10' onClick={() => this.getUrl(`song audio ${song} ${artist}`)} >
 			<img className= '' src={`${this.state.art}`} alt='artwork' />
 			<dl className="pl3 flex-auto">
 	          <dt className="clip">Title</dt>
