@@ -1,4 +1,4 @@
-### Amusik - amusik.herokuapp.com/
+### Amusik - {https//amusik.herokuapp.com/}
 
 ## Available Scripts
 
